@@ -4,27 +4,49 @@ import InputInformation from "./InputInfo";
 import { useState } from "react";
 
 const CreateVocab = () => {
-  const [selectedOption, setSelectedOption] = useState("");
+  const [word, setWord] = useState("");
+  const [mean, setMean] = useState("");
+  const [example, setExample] = useState("");
+  const [pronounce, setPronounce] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+  const [type, setType] = useState("");
 
-  const handleInput = (value) => {
-    console.log("Dữ liệu từ input:", value);
-    // Thực hiện xử lý dữ liệu từ input tại đây
+  const handleWordChange = (value) => {
+    setWord(value);
   };
 
-  const handleSelectChange = (event) => {
+  const handleMeanChange = (value) => {
+    setMean(value);
+  };
+
+  const handleExampleChange = (value) => {
+    setExample(value);
+  };
+
+  const handlePronounceChange = (value) => {
+    setPronounce(value);
+  };
+
+  const handleImageUrlChange = (value) => {
+    setImageUrl(value);
+  };
+
+  const handleTypeChange = (event) => {
     const value = event.target.value;
-    setSelectedOption(value);
-    console.log("Dữ liệu từ select box:", value);
-    // Thực hiện xử lý dữ liệu từ select box tại đây
+    setType(value);
   };
-
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Thực hiện xử lý dữ liệu từ cả input và select box
+    // Thực hiện xử lý dữ liệu từ các input và lưu vào các biến word, mean, example, pronounce, imageUrl, type
+    console.log("Word:", word);
+    console.log("Mean:", mean);
+    console.log("Example:", example);
+    console.log("Pronounce:", pronounce);
+    console.log("Image URL:", imageUrl);
+    console.log("Type:", type);
   };
-
   return (
-    <form action="" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <Card extra={"w-full p-4 h-full"}>
         <div className="mx-5 mb-8 w-full">
           <h4 className="text-xl font-bold text-navy-700 text-green-400 dark:text-white">
@@ -43,7 +65,7 @@ const CreateVocab = () => {
             <div className="word mt-5">
               <InputInformation
                 Children={"cuisine"}
-                onInputChange={handleInput}
+                onInputChange={handleWordChange}
               />
             </div>
           </div>
@@ -55,7 +77,7 @@ const CreateVocab = () => {
             <div className="mean mt-5">
               <InputInformation
                 Children={"a country or region's style of cooking"}
-                onInputChange={handleInput}
+                onInputChange={handleMeanChange}
               />
             </div>
           </div>
@@ -68,7 +90,7 @@ const CreateVocab = () => {
             <div className="example mt-5">
               <InputInformation
                 Children={"There more to Italian cuisine than pizza"}
-                onInputChange={handleInput}
+                onInputChange={handleExampleChange}
               />
             </div>
           </div>
@@ -80,8 +102,8 @@ const CreateVocab = () => {
             <div className="choosing mt-5">
               <div className="relative  mb-4 w-full">
                 <select
-                  value={selectedOption}
-                  onChange={handleSelectChange}
+                  value={type}
+                  onChange={handleTypeChange}
                   class="w-full border-b-2 border-gray-400  required:ring-red-500 focus:border-green-500 focus:outline-none"
                 >
                   <option value="choose">-Choose type-</option>
@@ -106,7 +128,7 @@ const CreateVocab = () => {
             <div className="pronounce mt-5">
               <InputInformation
                 Children={"/kwi'zi:n/"}
-                onInputChange={handleInput}
+                onInputChange={handlePronounceChange}
               />
             </div>
           </div>
@@ -116,18 +138,17 @@ const CreateVocab = () => {
             <div className="image-url mt-5">
               <InputInformation
                 Children={"https:unsplash.com/photos/JgiIOA"}
-                onInputChange={handleInput}
+                onInputChange={handleImageUrlChange}
               />
             </div>
           </div>
         </div>
         <div className="text-center transition-all hover:scale-105">
-          <a
-            href="/"
+          <input
             className="rounded-full bg-green-400 py-3 px-10 text-base font-semibold text-white"
-          >
-            <button type="submit">Create</button>
-          </a>
+            type="submit"
+            value={"Create"}
+          ></input>
         </div>
       </Card>
     </form>
