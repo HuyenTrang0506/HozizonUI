@@ -50,7 +50,7 @@ const CreateVocab = () => {
       <Card extra={"w-full p-4 h-full"}>
         <div className="mx-5 mb-8 w-full">
           <h4 className="text-xl font-bold text-navy-700 text-green-400 dark:text-white">
-            Create
+            Create vocabulary
           </h4>
           <p className="mt-2 text-base text-gray-600">
             This is where you can create new vocabulary to practice.
@@ -107,16 +107,16 @@ const CreateVocab = () => {
                   class="w-full border-b-2 border-gray-400  required:ring-red-500 focus:border-green-500 focus:outline-none"
                 >
                   <option value="choose">-Choose type-</option>
-                  <option value="Noun">Noun</option>
-                  <option value="Verb">Verb</option>
-                  <option value="Adjective">Adjective</option>
-                  <option value="Adverb">Adverb</option>
-                  <option value="Phrasal verb">Phrasal verb</option>
-                  <option value="Preposition">Preposition</option>
-                  <option value="Conjunction">Conjunction</option>
-                  <option value="Idiom">Idiom</option>
-                  <option value="Slang">Slang</option>
-                  <option value="Other">Other</option>
+                  <option value="noun">Noun</option>
+                  <option value="verb">Verb</option>
+                  <option value="adjective">Adjective</option>
+                  <option value="adverb">Adverb</option>
+                  <option value="phrasal verb">Phrasal verb</option>
+                  <option value="preposition">Preposition</option>
+                  <option value="conjunction">Conjunction</option>
+                  <option value="idiom">Idiom</option>
+                  <option value="slang">Slang</option>
+                  <option value="other">Other</option>
                 </select>
               </div>
             </div>
